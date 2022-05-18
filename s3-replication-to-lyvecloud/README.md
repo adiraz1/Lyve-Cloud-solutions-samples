@@ -10,7 +10,7 @@ Before you start, please make sure you have these requirements and information i
 	- Buckets
 	- Permissions
 	- Service Account
-- Lyve Cloud access and secret key. These can be obtained from the console by creating a new Service Account with appropriate permissions.
+- Lyve Cloud access and secret keys. These can be obtained from the console by creating a new Service Account with appropriate permissions.
 - Lyve Cloud bucket
 - AWS account
 - Access to AWS Management Console with necessary permissions to create/modify the following services:
@@ -20,10 +20,10 @@ Before you start, please make sure you have these requirements and information i
 	- S3
 
 ## Known Limitations
-This repository provides a sample code to show how to automate, replicate S3 objects from AWS to Lyve Cloud using S3 event notification and Lambda, but it’s not a complete solution. \
+This integration solution is a sample code to show how to automate, the replication of S3 objects from AWS to Lyve Cloud using S3 event notification and Lambda, but it’s not a complete solution. \
 There are limitations and functionality gaps to handle before this sample code can be used in a production environment:
 - Due to Lambda storage limitation objects bigger than 10GB will not be replicated and skipped.
-- The sample code only replicates newly created objects from S3 to Lyve Cloud as soon as they are created. Please note, existing objects are not replicated to Lyve Cloud.
+- The sample code only replicates newly created objects from AWS S3 to Lyve Cloud as soon as they are created. Please note, existing objects are not replicated to Lyve Cloud.
 - Error capturing and reporting is limited, some failures may not be reported.
 
 **Note:** Full access permissions are provided for this sample code. However, for using this solution in a production environment the principle of the least privilege model should be applied.  The least privileges required to run this solution are:
@@ -143,14 +143,6 @@ Login to Lyve Cloud console, create a Service Account with appropriate permissio
  <p style="text-align:left"><img alt="Create objects" src="images/step6-pic1.png" width="1000"/></p>
 
 2. Check in the target Lyve Cloud bucket to see the file/folder is created.
-
-
-## Solution cost per month
-Given below is a sample illustration of how much this integration solution would cost per month for 1000 object replication. This is based on the AWS pricing as of writing this document.
-
- <p style="text-align:center"><img alt="Solution cost" src="images/cost-analysis.png" width="1300"/></p>
-
-**Note:** S3 and Lyve Cloud storage cost is not shown as it may vary depending on type of storage being used.
 
 
 ## Architecture Diagram
