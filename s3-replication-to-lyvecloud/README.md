@@ -1,7 +1,8 @@
 # S3 Replication to Lyve Cloud - using AWS Lambda
 
 ## Introduction
-The purpose of this integration solution is to demonstrate how to automatically replicate AWS S3 objects(upto 10GB size) to a Lyve Cloud bucket using AWS Lambda.
+The purpose of this integration solution is to demonstrate how to automatically replicate AWS S3 new objects in a bucket (upto 10GB size) to a Lyve Cloud bucket using AWS Lambda.
+AWS Lambda corresponds in this example to object create actions.
 
 ## Requirements
 Before you start, please make sure you have these requirements and information in place:
@@ -112,7 +113,7 @@ Login to Lyve Cloud console, create a Service Account with appropriate permissio
  <p style="text-align:left"><img alt="General configuration" src="images/step4-pic6.png" width="1000"/></p>
 
 13. Edit `Environment variables` to add the following Key/Value pairs.
-	* Key: `REGION`, Value: `us-west-1`.
+	* Key: `REGION`, Value: `us-west-1` - This is the region of  the AWS S3 source bucket.
 	* Key: `SECRET_KEY`, Value: `LyveCloudKeys` – Secret name created earlier.
 	* Key: `TARGET_BUCKET`, Value: `<target lyve cloud bucket>`
  <p style="text-align:left"><img alt="Environment variables" src="images/step4-pic7.png" width="1000"/></p>
